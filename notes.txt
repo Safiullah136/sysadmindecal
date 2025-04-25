@@ -1,0 +1,2 @@
+Difference between ssh script-name, bash script-name and ./script-name?
+./script-name works when +x permission given to file
