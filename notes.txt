@@ -7,3 +7,10 @@ Parent --> spawns Thousands of processes. Kernel saves exit codes and metadata o
 Zombie processes can still occur if parent never exits.  --> Resource Leaks
 
 Init waits on all process to prevent resource leak. It may happen that a parent spawning many processes and not waiting for them. then those child become of init then init waits for them. No resource leak.
+
+Horizontal Scaling Problem:
+One Name can not bind to multiple IP addresses of multiple machines.
+Solution: Load Balancer.
+Domain Name --> IP address of load balancer. It transfers request to free machines.
+
+Anycast

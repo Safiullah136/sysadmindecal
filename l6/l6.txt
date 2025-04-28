@@ -1,0 +1,54 @@
+Question 2a: What is the systemctl command to show whether bind9 is running or not?
+Ans: 
+    systemctl status bind9
+
+Question 2b: Why does the dig command (dig ocf.berkeley.edu) work if @localhost is not present at the end (if bind9 is not started) but times out when @localhost is added?
+Ans:
+    if @localhost is not present at the end (if bind9 is not started) then dig looks for nameservers in /etc/resolv.conf where actual DNS you use for surfing are placed. If @localhost is added, dig uses localhost that is user machine for DNS but we don't have a DNS setup on our machine before bind9.
+
+Question 2c: What additional entries did you add to your DNS server config (the db.example.com file)?
+Ans:
+    alias IN CNAME @
+    google.com  IN A 185.199.108.153
+
+Question 2d: What commands did you use to make requests to the local DNS server for your additional entries?
+Ans:
+    dig alias.example.com @localhost
+    dig google.example.com @localhost
+
+
+Question 3a: Do you notice any pattern when you refresh the page multiple times?
+Ans:
+    round robin
+
+Question 3b: What load balancing algorithm are you using?
+Ans:
+    round robin
+
+Question 3c: What did you add to the haproxy config? (just copy and paste the lines you added to the bottom into here)
+Ans:
+    frontend www.example.com
+        bind 0.0.0.0:7000
+        bind [::]:7000
+        default_backend web_servers
+
+    backend web_servers
+        balance leastconn
+        server 8080server 127.0.0.1:8080 cookie 8080server check
+        server 8083server 127.0.0.1:8083 cookie 8083server check
+        server 8084server 127.0.0.1:8084 cookie 8084server check
+        server 8081server 127.0.0.1:8081 cookie 8081server check
+        server 8085server 127.0.0.1:8085 cookie 8085server check
+        server 8082server 127.0.0.1:8082 cookie 8082server check
+
+Question 3d: What do you notice has changed on the stats page after adding health checks?
+Ans:
+    Status is showing UP n 'ms'
+
+Question 3e: What changes in the stats page when you crash a worker? What happened to the pattern from before?
+Ans:
+    Its status changes to DOWN. It is eliminated from round robin. Remaining servers come in Round robin pattern.
+
+Question 3f: What HTTP status code (or error message) does HAProxy return if you crash all of the workers?
+Ans:
+    503 Service Unavailable    
