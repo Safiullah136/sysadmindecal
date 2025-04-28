@@ -1,0 +1,22 @@
+Part 1: Using systemd:
+Question 2: What is the difference between systemctl reload yourservice and systemctl restart yourservice?
+Answer: reload is used to load the service with new configuration without stopping the service while restart stops and starts it from scratch.
+
+Question 4: What command did you run to crash the service?
+Ans: sudo systemctl stop toy.service
+
+Question 5: Upload your fully featured toy.service file
+Ans:
+[Unit]
+Description=A Toy Server
+Requires=
+After=network.target remote-fs.target nss-lookup.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+ExecStart=/home/muhammad-safiullah/Desktop/sysadmin-decal/l4/decal-labs/4/run
+User=muhammad-safiullah
+Restart=always
+RestartSec=10

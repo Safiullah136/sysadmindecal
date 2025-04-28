@@ -1,0 +1,21 @@
+# VIM Questions
+# 1. 
+:-9,$d
+# 2.
+:!sh
+# 3.
+vim -o notes.txt a.txt
+# 4.
+> 
+
+# TMUX Questions
+# 1.
+ctrl+b :resize-pane -R 10
+# 2. 
+ctrl+b ,
+# 3.
+tmux attach
+# 4.
+tmux kill-session
+# 5.
+tmux new

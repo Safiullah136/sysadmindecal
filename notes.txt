@@ -1,2 +1,9 @@
 Difference between ssh script-name, bash script-name and ./script-name?
-./script-name works when +x permission given to file
+./script-name works when +x permission given to file + requires shebang in script-name
+
+In Bash scripting, $1 refers to the first argument passed to a script when it is executed.
+
+Parent --> spawns Thousands of processes. Kernel saves exit codes and metadata of all childs in zombie states because parent can wait on any of them and require exit code of any of them which have terminated.  
+Zombie processes can still occur if parent never exits.  --> Resource Leaks
+
+Init waits on all process to prevent resource leak. It may happen that a parent spawning many processes and not waiting for them. then those child become of init then init waits for them. No resource leak.

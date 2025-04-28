@@ -1,0 +1,24 @@
+Exercise 2: Trouble shooting 
+    Solution:
+    1) gcc -o ocfdocs ocfdocs.c
+    2) mkdir -p packocfdocs/usr/bin
+    3) mv ocfdocs packocfdocs/usr/bin
+    4) fpm -s dir -t deb -n ocfdocs -v 1.0~ocf1 -C packocfdocs
+    5) sudo dpkg -i ocfdocs_1.0~ocf1_amd64.deb
+    6) ocfdocs
+    7) sudo dpkg -i ocfspy_1.0~ocf1_amd64.deb
+    8) ocfspy
+
+Compiling and packaging Questions:
+1) No
+2) Because executables in packaged "/usr/bin" are transferred into global "/usr/bin" which allows them to be run while being in any pwd (present working directory). 
+
+Debugging
+1) ocfdocs
+2) Sinkhole
+
+Exercise 3: Spelunking 
+1) tree
+2) libc6 (>= 2.38) -- in control file
+3) Additional folders like /usr/lib and /usr/include are not needed for this package because it doesn't need header files and other libraries in its codebase.
+4) None

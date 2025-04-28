@@ -1,0 +1,25 @@
+Short Answer Questions
+
+1. Does HTTP use TCP or UDP and why? How about Discord and Skype, why?
+Ans: 
+    HTTP uses TCP for reliable transmission because end users of HTTP doesn't want webpages with images or some media cut offed due to packet loss. Website
+    owners spend dollars on best UI Interface so all packets of their webpage should be transferred.
+
+    Discord and Skype use UDP because on skype if some video gets disrupted its fine but next packets should be transmitted quickly so users can easily
+    understand what other is talking about. If packets get delay then users can't connect between two pieces. Fast transmission is priority.
+
+2. Who manufactured the NIC with mac address dc:fb:48:21:7b:23?
+Ans:
+    Intel Corp.
+
+3. How many distinct hosts can 127.0.0.0/8 contain?
+Ans:
+    2^24
+
+4. What are three types of records you can get when you perform a DNS lookup of google.com using the dig command?
+Ans:
+    IP addresses, Name Servers, UDP or TCP
+
+5. Is the result of running ping enough to determine whether or not you can reach a server? Why or why not?
+Ans:
+    No. It says that server is responding to ICMP messages but maybe it doesn't respond to regular protocols like HTTP, TCP etc. 
