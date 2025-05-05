@@ -1,0 +1,19 @@
+1. What caused the merge conflict in the Git exercises you did?
+Ans:
+    Merge Conflict was caused by when we tried to merge two parts of codebase which are different where git cannot chose which one to keep and which one not to keep.
+
+2. Why does Git require us to manually intervene in merge conflicts?
+Ans:
+    So that we can select which one to chose from two based on correctness of semantics in our codebase.
+
+3. In our exercise of making pull requests, why did we fork the repository before making a PR?
+Ans:
+    Because we have not access to create a branch in original repository.
+
+4. What command would you use to sync a folder ~/Downloads/Linux_ISOs to the folder /usr/local/share/Calendar, while preserving file metadata? (hint: use rsync)
+Ans:
+    rsync -a ~/Downloads/Linux_ISOs /usr/local/share/Calendar
+
+5. How does rsync determine when to look for changes between files? 
+Ans:
+    By seeing if the ‘last modified’ timestamp of the files are different.

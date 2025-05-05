@@ -1,0 +1,13 @@
+What user are you logged in as by default in the container?
+Ans:
+    root
+
+If you start and then exit an interactive container, and then use the docker run -it ubuntu:latest command again; is it the same container? How can you tell?
+Ans:
+    different container. Container id's are different.
+
+Observe that in the output of docker ps, each container has an associated container ID. Explain why containers have IDs/Names rather than being named after the image, for example httpd.
+Ans:
+    Because multiple containers may be running of same image. Containers need to have unique identifier.
+
+    

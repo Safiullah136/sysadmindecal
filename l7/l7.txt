@@ -1,0 +1,59 @@
+Encryption and Decryption
+
+1. What are the decrypted contents of file1.txt.gpg?
+Ans:
+    Quack
+
+2. What command allows you to import a key?
+Ans:
+    gpg --import [KEY]
+
+3. What command allows you to export a key to a file? (Add the --armor flag to ASCII-encode the key so it can be sent easily in text form)
+Ans:
+    gpg --export --armor --output [FILE] [KEYID or USERID]
+
+4. What command allows you to see all of the keys on your keyring?
+Ans:
+    gpg --list-keys
+
+5. What are the decrypted contents of b8/file2.txt.gpg?
+Ans:
+    Woof
+
+Hashing (Checksums)
+
+1. What is the MD5 hash of file3.txt?
+Ans:
+    ddbefc9c1d8a8d9195a420a7181352e9
+
+2. What is the SHA1 hash of the MD5 hash of file3.txt? In other words, what is SHA1(MD5(file3.txt))?
+Ans:
+    15c3d7fa41fcc2ed98c2fda065e3248047a048f4
+
+File Security
+
+1. file4.txt: What are the permissions of this file? Explain what they allow and disallow.
+Ans:
+    Owner: Read, Write permissions
+    Owner Group: Read
+    Others: Read
+
+2. file5: Make this file executable and execute it. What is its printout?
+Ans:
+    aching flair
+
+3. file6.txt: Change this file to be under your ownership. What command did you use?
+Ans:
+    sudo chown -R muhammad-safiullah:muhammad-safiullah file6.txt
+
+4. file7.txt: Make this file readable only to you. What command did you use?
+Ans:
+    sudo chmod u+r,g-r,o-r file7.txt
+
+5. file8.txt: Change this file’s permissions such that only root should be able to read this file and no one should be able to edit it. What command did you use?
+Ans:
+    sudo chmod u+r,g-r,o-r,u-w,g-w,o-w file8.txt
+
+6. file9.txt: Choose any method to make this file readable to you and unreadable to the previous owner. What command did you use?
+Ans:
+    sudo chmod u-r file9.txt

@@ -14,3 +14,24 @@ Solution: Load Balancer.
 Domain Name --> IP address of load balancer. It transfers request to free machines.
 
 Anycast
+Look at password salts
+
+Only Torrents do CheckSum Verification. For softwares downloaded without Torrents, do manual CheckSum Verification
+fail2ban pkge useful
+root ca, lets encrypt, tls certificates. 
+
+Commit --> On individual branch
+Merge  --> Btw branches
+
+(Rebase + merge) shows history of the other branch on the main branch.
+How other branch went from common ancestor commit to the commit we merged with the main
+
+But merge only shows that somehow you went from common ancestor to a really big achievement on main branch where big achievement was the work of another branch
+that probably would have spanned across multiple commits. Those commits not visible on main.
+
+Server gets to know somehow about the branches that you create and worked on and it will update commit on remote repo just there has been updated in local repo.
+Ex if branch test was made from feature. You commited then all those commits of test would be reflected in a separate branch called test on server alongside commits of feature that has been made until this point if they were put in staging area.  
+
+All changes checksummed in docker.
+
+When image not on machine, docker run {IMAGE} first pulls out image from a docker hub.
